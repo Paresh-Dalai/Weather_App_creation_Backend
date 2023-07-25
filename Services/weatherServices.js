@@ -14,7 +14,10 @@ const axios = require("axios");
       location: response.data.name,
       weather: response.data.weather[0].main,
       temperature: response.data.main.temp,
-      humidity: response.data.main.humidity
+      humidity: response.data.main.humidity,
+      visibility : response.data.visibility,
+      feels_like : response.data.main.feels_like,
+      country_code : response.data.sys.country,
     };
   } catch (err) {
     throw new Error('Failed to fetch weather data from the API.');
