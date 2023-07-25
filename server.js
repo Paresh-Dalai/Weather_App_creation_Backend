@@ -8,10 +8,11 @@ const cors = require("cors")
 const expressApp = express();
 
 expressApp.use(express.json());
+expressApp.use(cors());
 
 // Routes
 expressApp.use('/weather', weatherRoutes);
-expressApp.use(cors)
+
 
 expressApp.use((err, req, res, next) => {
   console.error(err);
