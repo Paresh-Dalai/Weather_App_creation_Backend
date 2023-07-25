@@ -7,7 +7,9 @@ const axios = require("axios");
   const weather_URL = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=6f5b32626e889a442f05abbd186d98ab&units=metric`;
 
   try {
+    console.log("URL" , weather_URL)
     const response = await axios.get(weather_URL);
+    console.log("data" , response.data)
     return {
       location: response.data.name,
       weather: response.data.weather[0].main,
